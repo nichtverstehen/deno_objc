@@ -531,10 +531,8 @@ export function fromNative(enc: CTypeEncodable, v: any) {
       return Number(v);
 
     case "unsigned long long":
-      return new BigUint64Array(v.buffer)[0];
-
     case "long long":
-      return new BigInt64Array(v.buffer)[0];
+      return BigInt(v);
 
     case "bool": // u8
       return v !== 0;
